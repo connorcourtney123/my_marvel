@@ -9,7 +9,7 @@ export default function List(props) {
 
     const fetchAuthor = async () => {
         try{
-            let response = await axios.get(`http://localhost:3000/user/author/`+props.list.userId)
+            let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/author/`+props.list.userId)
 
             setAuthor(response.data.username)
 
