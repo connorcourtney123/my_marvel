@@ -7,9 +7,11 @@ export default function ListOfLists(props) {
         <div>
             
             <div className="lists_container">
-                {props.allLists.map((list) => (
+                {props.allLists ? 
+                props.allLists.map((list) => (
                     <List key={list.id} list={list} user={props.user}/>
-                ))}
+                ))
+            : <div>no lists</div>}
 
             </div>
             
