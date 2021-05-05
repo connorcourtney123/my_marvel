@@ -12,7 +12,7 @@ When I click Community List, I should see other users lists/viewing orders.<br/>
 Should be able to save other users lists.<br/>
 Delete Lists and Edit Lists.<br/>
     
-    
+    blah
 MVP CHECKLIST:<br/>
 User Sign up<br/>
 User Log in<br/>
