@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
+import env from 'react-dotenv'
 
 
 export default function ListDetails(props) {
@@ -11,7 +12,7 @@ export default function ListDetails(props) {
 
     const fetchMovies = async () => {
         try{
-            let response = await axios.get(`http://localhost:3000/list/details/`+listInfo.list.id)
+            let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/list/details/`+listInfo.list.id)
 
             setMovies(response.data.list)
 
@@ -26,7 +27,7 @@ export default function ListDetails(props) {
     const deleteList = async (e) => {
         try{
             e.preventDefault()
-            let response = await axios.delete(`http://localhost:3000/list/`+listInfo.list.id)
+            let response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/list/`+listInfo.list.id)
 
             history.push('/myLists')
         }catch(error){

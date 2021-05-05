@@ -23,7 +23,7 @@ function App() {
     const fetchAllLists = async () => {
       try{
     
-        let lists = await axios.get(`http://localhost:3000/list/`)
+        let lists = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/list/`)
 
         
 
@@ -43,7 +43,7 @@ function App() {
 
     const verifyUser = async () => {
       try{
-        let response = await axios.get(`http://localhost:3000/user/verify`, {
+        let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/verify`, {
           headers: {
             Authorization: localStorage.userId
           }

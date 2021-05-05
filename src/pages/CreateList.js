@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import pow from '../assets/pow.png'
 import {useHistory} from 'react-router-dom'
+import env from 'react-dotenv'
 
 export default function CreateList(props) {
     const history = useHistory()
@@ -15,7 +16,7 @@ export default function CreateList(props) {
 
     const fetchAllMovies = async () => {
         try{
-            let response = await axios.get(`http://localhost:3000/movies/`)
+            let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/`)
 
             setAllMovies(response.data.movies)
 
@@ -33,7 +34,7 @@ export default function CreateList(props) {
             
             getInput()
 
-            let response = await axios.post(`http://localhost:3000/list/`, {
+            let response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/list/`, {
                 name: newName,
                 list: newList
             },

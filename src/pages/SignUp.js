@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import pow from '../assets/pow.png'
 import {useHistory} from 'react-router-dom'
+import env from 'react-dotenv'
 
 
 export default function SignUp(props) {
@@ -14,7 +15,7 @@ export default function SignUp(props) {
         try{
             e.preventDefault();
 
-            let response = await axios.post(`http://localhost:3000/user/`, {
+            let response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/`, {
                 username: username,
                 password: password
             })

@@ -21,7 +21,7 @@ export default function EditList(props) {
 
     const fetchAllMovies = async () => {
         try{
-            let response = await axios.get(`http://localhost:3000/movies/`)
+            let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies/`)
 
             setAllMovies(response.data.movies)
 
@@ -59,7 +59,7 @@ export default function EditList(props) {
 
             getInput()
 
-            let response = await axios.put(`http://localhost:3000/list/edit`,{
+            let response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/list/edit`,{
                 listId: listInfo.id,
                 name: newName,
                 list: newList
