@@ -21,7 +21,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,6 +39,10 @@
       "last 1 safari version"
     ]
   },
-  "react-dotenv": {"whitelist": ["BACLEND_URL"]},
+  "react-dotenv": {
+    "whitelist": [
+      "BACLEND_URL"
+    ]
+  },
   "homepage": ""
 }
